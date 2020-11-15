@@ -12,6 +12,15 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.App-button{
+
+  position: absolute;
+width: 339px;
+height: 113px;
+left: 407px;
+top: 418px;
+
+}
 
 .App-login{
   position: absolute;
