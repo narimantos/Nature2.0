@@ -1,14 +1,13 @@
 .App {
   text-align: center;
-  background-color: #061024;
-  background-color: #061024;
+  background-color: #ffffff;
 
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  background-color: #061024;
+  background-color: #ffffff;
   
 
 }
@@ -26,21 +25,25 @@ html {
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
+    top: 500ch;
     animation: App-logo-spin infinite 20s linear;
+   
   }
 }
 
 @media (prefers-reduced-motion: no-preference){
 .App-Stars{
-  animation: .5s linear 1s infinite alternate slidein;}
+    
+  
+  }
 }
 .App-login {
   position: absolute;
-  height: 66px;
-  left: 5px;
-  top: 650px;
-  background-color: #061024;
-  color: rgb(0, 0, 0)
+  left: 87.86%;
+  right: 12.14%;
+  top: 22.31%;
+  bottom: 38.75%;
+  
 }
 .App-Address {
   position: absolute;
@@ -48,11 +51,28 @@ html {
   left: 5px;
   top: 840px;
   color: rgb(237, 255, 75);
-  background-color: #061024;
+  background-color: #ffffff;
 }
 
+.App-Hello {
+  font-size: calc(10px + 2vmin);
+  top: 10%;
+  left: 20%;
+  position: absolute;
+}
+
+.App-Button {
+  position: absolute;
+  font-size: calc(10px + 2vmin);
+  left: 5px;
+  top: 750px;
+  color: rgb(237, 255, 75);
+  background-color: #ffffff;
+}
+
+
 .App-header {
-  background-color: #061024;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -64,7 +84,7 @@ html {
 
 .App-link {
   color: #ff00dd;
-  background-color: #061024;
+  background-color: #ffffff;;
 }
 
 nav ul {
@@ -94,8 +114,12 @@ p {
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
+    top: 500ch;
+    display: flex;
   }
   to {
+    top: 300ch;
+    display: flex;
     transform: rotate(360deg);
   }
 }

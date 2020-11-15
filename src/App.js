@@ -82,7 +82,7 @@ class App extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { account: 'NOT YET DEFINED',gotMM: 0 }
+    this.state = { account: '',gotMM: '' }
   }
   componentDidMount() {
     setInterval(() => {
@@ -123,7 +123,7 @@ class App extends Component {
 
   async logoutMeta()
   {
-    this.setState({account: "Undifined", gotMM: 0})
+    this.setState({account: "undefined", gotMM: 0})
   }
 
 
@@ -145,18 +145,18 @@ class App extends Component {
             initial="initial"
             animate="animate"
           >
-            <motion.h2 variants={H2Variants}>
+            <motion.h2 variants={H2Variants}   className="App-Hello" >
               <div>
                 {isLoggedIn(this)   && <p> Hello, {this.state.account}  </p>}
                 {!isLoggedIn(this)  && <p> Hello {this.state.account} please login </p>}
               </div>
             </motion.h2>
             <motion.h3 variants={H3Variants}>
-              <div className="App-Stars">✰⋆🌟✪🔯✨</div >
+              <div className="App-logo">✰⋆🌟✪🔯✨</div >
             </motion.h3>
           </motion.div> <div >
-             {isLoggedIn(this)   && <button onClick={this.logoutMeta.bind(this)}> <Logout className="App-Stars" >  </Logout>  </button> }  
-             {!isLoggedIn(this)   && <button onClick={this.getMetaAccount.bind(this)}> <Logo className="App-Stars" >  </Logo>  </button> }  
+             {isLoggedIn(this)   && <button onClick={this.logoutMeta.bind(this)}> <Logout className="App-Button" >  </Logout>  </button> }  
+             {!isLoggedIn(this)   && <button onClick={this.getMetaAccount.bind(this)}> <Logo className="App-Button" >  </Logo>  </button> }  
 
           </div>
         </header>
