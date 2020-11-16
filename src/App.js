@@ -6,8 +6,11 @@ import { motion, useMotionValue } from "framer-motion"
 import { state } from "framer-motion"
 import React, { Component, useState } from 'react';
 import detectEthereumProvider from '@metamask/detect-provider';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
 //const [addr, setAddr] = useState('')
 
 const ethEnabled = () => {
@@ -137,30 +140,42 @@ class App extends Component {
 
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <motion.div
-            className="App"
-            variants={ContainerVariants}
-            initial="initial"
-            animate="animate"
-          >
-            <motion.h2 variants={H2Variants}   className="App-Hello" >
-              <div>
+      <Router>
+
+
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <ul className="navbar-nav mr-auto">
+            <li><Link to={'/'} className="nav-link"> Home </Link></li>
+            <li><Link to={'/contact'} className="nav-link">Contact</Link></li>
+            <li><Link to={'/about'} className="nav-link">About</Link></li>
+          </ul>
+       
+             {isLoggedIn(this)   && <button onClick={this.logoutMeta.bind(this)}> <Logout className="App-Button" > sds </Logout>  </button> }  
+             {!isLoggedIn(this)   && <button onClick={this.getMetaAccount.bind(this)}> <Logo className="App-Button" > sdasd  </Logo>  </button> }  
+      
+          </nav>
+          <hr />
+          <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/contact' component={Contact} />
+              <Route path='/about' component={About} />
+          </Switch>
+          <body >
+       
+              <h1>
                 {isLoggedIn(this)   && <p> Hello, {this.state.account}  </p>}
                 {!isLoggedIn(this)  && <p> Hello {this.state.account} please login </p>}
-              </div>
-            </motion.h2>
-            <motion.h3 variants={H3Variants}>
-              <div className="App-logo">✰⋆🌟✪🔯✨</div >
-            </motion.h3>
-          </motion.div> <div >
-             {isLoggedIn(this)   && <button onClick={this.logoutMeta.bind(this)}> <Logout className="App-Button" >  </Logout>  </button> }  
-             {!isLoggedIn(this)   && <button onClick={this.getMetaAccount.bind(this)}> <Logo className="App-Button" >  </Logo>  </button> }  
+              </h1>
+              <body>
+              <div class="night"> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> <div class="shooting_star"></div> </div>
+              </body>
+          
+            
+      </body>
 
-          </div>
-        </header>
-      </div>
+      
+            </Router>
+            
     );
   }
 }
